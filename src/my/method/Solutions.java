@@ -11,22 +11,22 @@ public class Solutions {
         }
     }
     public static int taxEarnings(int earnings){
-        int tax = earnings * 6 / 100;
-        return tax;
+        return earnings * 6 / 100;
+
     }
     public static boolean compare(int a, int b) {
         return a < b;
     }
-    public static String result(boolean c, int a, int b){
+    public static String result(boolean compare, int a, int b){
         String end1 ="Мы советуем вам УСН доходы минус расходы\n" +
         "Ваш налог составит: " + a + "\n" +
         "Налог на другой системе: " + b + "\n" +
         "Экономия: " + (b - a) + "рублей+ \n";
-        String end2 = "Мы советуем вам УСН доходы минус расходы\n" +
+        String end2 = "Мы советуем вам УСН доходы\n" +
                 "Ваш налог составит: " + b + "\n" +
                 "Налог на другой системе: " + a + "\n" +
-                "Экономия: " + (a - b) + "рублей+ \n";
-        if (c){
+                "Экономия: " + (a - b) + " рублей \n";
+        if (compare){
             return end1;
         } else {
             return end2;

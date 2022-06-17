@@ -17,9 +17,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         int earnings = 0;    // доходы
         int spendings = 0;   // расходы
-        int a = Solutions.taxEarningsMinusSpendings(earnings, spendings);
-        //int b = Solutions.taxEarnings(earnings);
-        //boolean c = Solutions.compare(a, b);
+        boolean  compare = false;
         String menu = "Выберите операцию и введите её номер:\n" +
                 "1. Добавить новый доход\n" +
                 "2. Добавить новый расход\n" +
@@ -35,18 +33,20 @@ public class Main {
                 switch (operation) {
                     case 1:
                         System.out.println("Введите сумму дохода:");
-                        String moneyStrIn = scan.nextLine(); // Не используйте тут nextInt (!)
+                        String moneyStrIn = scan.nextLine();
                         int moneyIn = Integer.parseInt(moneyStrIn);
                         earnings += moneyIn;
                         break;
                     case 2:
                         System.out.println("Введите сумму расхода:");
-                        String moneyStrOut = scan.nextLine(); // Не используйте тут nextInt (!)
+                        String moneyStrOut = scan.nextLine();
                         int moneyOut = Integer.parseInt(moneyStrOut);
                         spendings += moneyOut;
                         break;
                     case 3:
-                        //System.out.println(Solutions.result(c, a, b));
+                        int a = Solutions.taxEarningsMinusSpendings(earnings, spendings);
+                        int b = Solutions.taxEarnings(earnings);
+                        System.out.println(Solutions.result(compare, a, b));
                         break;
                     default:
                         System.out.println("Такой операции нет");
