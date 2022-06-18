@@ -17,13 +17,11 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         int earnings = 0;    // доходы
         int spendings = 0;   // расходы
-        boolean  compare = false;
         String menu = "Выберите операцию и введите её номер:\n" +
                 "1. Добавить новый доход\n" +
                 "2. Добавить новый расход\n" +
                 "3. Выбрать ситему налогооблажения\n";
         while (true){
-
             System.out.println(menu);
             String input = scan.nextLine();
             if ("end".equals(input)) {
@@ -46,6 +44,7 @@ public class Main {
                     case 3:
                         int a = Solutions.taxEarningsMinusSpendings(earnings, spendings);
                         int b = Solutions.taxEarnings(earnings);
+                        boolean compare = a < b;
                         System.out.println(Solutions.result(compare, a, b));
                         break;
                     default:
